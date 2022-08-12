@@ -5,11 +5,12 @@ import AppButton from '../components/AppButton';
 function WelcomeScreen(props) {
     return (
         <ImageBackground 
+        blurRadius={10}
         style={styles.background}
         source={require("../assets/background5.jpg")}>
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require("../assets/myflush2.png")}/>
-                <Text>Find and Flush</Text>
+                <Text style={styles.slogan}>Find and Flush</Text>
             </View>
             <View style={styles.buttonsContainer}>
                 <AppButton title="Login" />
@@ -37,6 +38,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 70,
         alignItems: 'center'
+    },
+    slogan: {
+        fontSize: 25,
+        fontWeight: "600",
+        paddingVertical: 7,
+
     },
 })
 

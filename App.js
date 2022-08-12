@@ -1,11 +1,11 @@
 import React from "react";
-import { View } from "react-native-web";
-import AppButton from "./app/components/AppButton";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
+import { View, Text } from "react-native-web";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
+
 
 export default function App() {
   return (
-    <WelcomeScreen/>
-  )
+    <ListingDetailsScreen />
+  );
 }
