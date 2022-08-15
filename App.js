@@ -1,4 +1,5 @@
 import React from 'react';
+import AppText from './app/components/AppText';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
@@ -10,7 +11,7 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 
 function App() {
   return (
-    <MessagesScreen/>
+    <ListingEditScreen />
   );
 }
 
