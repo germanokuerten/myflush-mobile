@@ -1,26 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import AppText from './app/components/AppText';
-import AccountScreen from './app/screens/AccountScreen';
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
-import ListingEditScreen from './app/screens/ListingEditScreen';
-import ListingsScreen from './app/screens/ListingsScreen';
-import LoginScreen from './app/screens/LoginScreen';
-import MessagesScreen from './app/screens/MessagesScreen';
-import ViewImageScreen from './app/screens/ViewImageScreen';
-import WelcomeScreen from './app/screens/WelcomeScreen';
+import React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import Screen from './app/components/Screen';
 
-import * as ImagePicker from 'expo-image-picker'
-import * as Permissions from 'expo-permissions'
-import { Button, Image } from 'react-native';
-import ImageInput from './app/components/ImageInput';
-import ImageInputList from './app/components/ImageInputList';
+// function HomeScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Home Screen</Text>
+//     </View>
+//   );
+// }
+
+const Tweets = () => (
+  <Screen>
+    <Text> Tweets </Text>
+  </Screen>
+)
+
+const TweetDetails = () => (
+  <Screen>
+    <Text> TweetDetails </Text>
+  </Screen>
+)
+
+const Stack = createNativeStackNavigator();
+
+const StackNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets}/>
+    <Stack.Screen name="TweetDetails" component={TweetDetails}/>
+  </Stack.Navigator>
+)
 
 function App() {
-
   return (
-    <ListingEditScreen />
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 }
+
 
 export default App;
