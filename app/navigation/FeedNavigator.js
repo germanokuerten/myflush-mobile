@@ -8,14 +8,13 @@ import ListingsScreen from '../screens/ListingsScreen';
 const Stack = createNativeStackNavigator();
 
 const FeedNavigator = () => (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen 
             name="Listings" 
             component={ListingsScreen}  
             options={{
                 title: 'Profile',
                 ...TransitionPresets.ModalSlideFromBottomIOS,
-                headerShown: false
               }}    
         />
         <Stack.Screen 
@@ -24,7 +23,6 @@ const FeedNavigator = () => (
             options={{
                 title: 'Profile',
                 ...TransitionPresets.ModalSlideFromBottomIOS,
-                headerShown: false
               }}    
         />
     </Stack.Navigator>
