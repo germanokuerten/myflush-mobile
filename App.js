@@ -7,6 +7,9 @@ import { Button } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Screen from './app/components/Screen';
+import AuthNavigator from './app/navigation/AuthNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
+import AppNavigator from './app/navigation/AppNavigator';
 
 const Link = () => {
 
@@ -76,7 +79,7 @@ const FeedNavigator = () => (
   </Stack.Navigator>
 )
 
-const Account = () => <Screen><Text>Account</Text></Screen>
+const AccountNavigator = () => <Screen><Text>Account</Text></Screen>
 
 const Tab = createBottomTabNavigator();
 
@@ -99,8 +102,8 @@ const TabNavigator = () => (
 
 function App() {
   return (
-    <NavigationContainer>
-      <TabNavigator />
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
     </NavigationContainer>
   );
 }
