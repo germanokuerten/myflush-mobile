@@ -38,12 +38,13 @@ function ListingsScreen({ navigation }) {
     
 
     return (
+        <>
+            <ActivityIndicator visible={getListingsApi.loading} />
         <Screen style={styles.screen}>
             {getListingsApi.error && <>
                 <AppText>Couldn't flush the listings.</AppText>
                 <AppButton title="Flush again" onPress={getListingsApi.request} />
             </>}
-            <ActivityIndicator visible={getListingsApi.loading} />
             <FlatList 
                 data={getListingsApi.data}
                 keyExtractor={listings => listings.id.toString()}
@@ -58,6 +59,7 @@ function ListingsScreen({ navigation }) {
                 )}
             />
         </Screen>
+        </>
     );
 }
 
