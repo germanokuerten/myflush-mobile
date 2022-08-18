@@ -23,7 +23,7 @@ Welcome screen            |
 ## Future Enhancements
 
 - Map navigation
-- user can search by category
+- User can search by category
 - User can post ratings, comments, on posts 
 - User can direct message other users
 - Edit and delete user's own postings
