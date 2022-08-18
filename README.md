@@ -9,9 +9,9 @@ Find and Flush!
 ## Technologies
 
 - JavaScript 
-- Node JS
 - React Native
 - Expo
+- Node JS
 - JWT Auth
 - Lottie React Native
 - Apisauce
