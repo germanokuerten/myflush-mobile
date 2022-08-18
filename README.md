@@ -14,7 +14,6 @@ Find and Flush!
 - Node JS
 - JWT Auth
 - Lottie React Native
-- Apisauce
 
 Welcome screen            |  
 :-------------------------:|
