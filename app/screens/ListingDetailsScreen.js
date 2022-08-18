@@ -2,16 +2,21 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import AppText from '../components/AppText';
 import { Image } from 'react-native-expo-image-cache';
+import { KeyboardAvoidingView } from 'react-native';
 
 import ListItem from '../components/ListItem';
 import colors from '../config/colors';
+import ContactSellerForm from '../components/ContactSellerForm';
 
 function ListingDetailsScreen({ route }) {
 
     const listing = route.params;
 
     return (
-        <View>
+        <KeyboardAvoidingView
+            behavior='position'
+            keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}
+        >
             <Image style={styles.image} 
                     preview={{ uri: listing.images[0].thumbnailUrl }}
                     tint="light" 
@@ -24,11 +29,13 @@ function ListingDetailsScreen({ route }) {
                     <ListItem 
                         image={require('../assets/mano.png')}
                         title="Germano Kuerten"
-                        subTitle='3 Listings'
+                        subTitle='5 Listings'
                     />
                 </View>
+                {/* <ContactSellerForm /> */}
             </View>
-        </View>
+
+        </KeyboardAvoidingView>
     );
 }
 

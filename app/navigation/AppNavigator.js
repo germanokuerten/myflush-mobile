@@ -1,8 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import * as Notifications from 'expo-notifications';
-import * as Permisssions from 'expo-permissions'
 
 import AccountScreen from "../screens/AccountScreen";
 import ListingEditScreen from "../screens/ListingEditScreen";
@@ -11,11 +9,17 @@ import FeedNavigator from "./FeedNavigator";
 import AccountNavigator from "./AccountNavigator";
 import NewListingButton from "./NewListingButton";
 import routes from "./routes";
+import navigation from "./rootNavigation";
+import useNotifications from "../hooks/useNotifications";
 
 
 const Tab = createBottomTabNavigator()
 
-const AppNavigator = () => (
+const AppNavigator = () => {
+
+    useNotifications()
+
+    return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
         <Tab.Screen 
             name="Feed" 
@@ -45,5 +49,6 @@ const AppNavigator = () => (
         />
     </Tab.Navigator>
 )
+}
 
 export default AppNavigator;

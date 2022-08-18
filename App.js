@@ -7,6 +7,7 @@ import { Button } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppLoading from 'expo-app-loading';
+import * as Notifications from 'expo-notifications';
 
 import Screen from './app/components/Screen';
 import AuthNavigator from './app/navigation/AuthNavigator';
@@ -15,6 +16,7 @@ import AppNavigator from './app/navigation/AppNavigator';
 import OfflineNotice from './app/components/OfflineNotice';
 import AuthContext from './app/auth/context';
 import authStorage from './app/auth/storage';
+import { navigationRef } from './app/navigation/rootNavigation';
 
 const Link = () => {
 
@@ -120,10 +122,19 @@ function App() {
       onFinish={() => setIsReady(true)}
       onError={console.warn}/>)
 
+  // const showNotification = () => {
+  //   Notifications.scheduleNotificationAsync({
+  //     title: 'Congratulations',
+  //     body: 'Your order was successful', 
+  //   }, {
+  //     time: new Date().getTime() +2000,
+  //   })
+  // }
+
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       <OfflineNotice />
-      <NavigationContainer theme={navigationTheme}>
+      <NavigationContainer ref={navigationRef} theme={navigationTheme}>
         {user ? <AppNavigator /> : <AuthNavigator />}
       </NavigationContainer>
       </AuthContext.Provider>
